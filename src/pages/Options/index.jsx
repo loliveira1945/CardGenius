@@ -18,7 +18,6 @@ const MenuProps = {
 };
 
 export default function Header() {
-
   const { selectedId, handleListIds, handleListCards } = useStatusList(); // Usando o hook da lista
 
   const navigate = useNavigate();
