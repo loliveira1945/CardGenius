@@ -2,6 +2,7 @@ import * as React from 'react';
 import { options } from '../../constants/options'; //Importando lista de objetos dos status
 import { useStatusList } from '../../hooks/useStatusList'; // Importando o hook
 import { Button, Select, MenuItem } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 //#FFE74C
 
 //Configurações da estilização do Select (Material UI)
@@ -18,12 +19,20 @@ const MenuProps = {
 
 export default function Header() {
 
-  const { selectedId, handleListIds, handleListCards } = useStatusList(); // Usando o hook
+  const { selectedId, handleListIds, handleListCards } = useStatusList(); // Usando o hook da lista
+
+  const navigate = useNavigate();
+  const handleClick = (evento) => {
+    const route = evento.currentTarget.getAttribute('data-route-button');
+    if (route) {
+      navigate(route);
+    }
+  };
 
     return (
       <>
         <div className='flex flex-wrap items-center content-center justify-around w-full h-auto mx-auto md:px-8 sm:m-0 sm:p-0'>
-          <h3 className='font-bold text-lg text-center text-slate-700'>Selecione abaixo o status dos cards que deseja visualizar:</h3>
+          <h3 className='font-bold text-lg text-center text-slate-700 m-4'>Selecione abaixo o status dos cards que deseja visualizar:</h3>
           <Select
             labelId="demo-multiple-name-label"
             id="demo-multiple-name"
@@ -70,6 +79,8 @@ export default function Header() {
                 Listar cards
             </Button>
             <Button 
+                data-route-button="/formCard" //passando a rota, ja que nao tenho props
+                onClick={handleClick}
                 variant="contained" 
                 sx={{ 
                     width: 360, 

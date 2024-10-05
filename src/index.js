@@ -9,9 +9,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div className="flex flex-col h-screen">
-      <div className="h-[15%]"><Header /></div>
-      <div className="h-[65%] flex "><AppRoutes /></div>
-      <div className="h-[20%]"><Footer /></div>
+      <div className="h-[20%]"><Header /></div>
+      <div className="h-[70%] flex "><AppRoutes /></div>
+      <div className="h-[15%]"><Footer /></div>
 
     </div>
   </React.StrictMode>

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const useStatusList = () => {
-
     const [selectedId, setSelectedId] = React.useState([]);
 
     const handleListIds = (event) => {
@@ -29,5 +28,5 @@ export const useStatusList = () => {
         selectedId,
         handleListIds,
         handleListCards,
-      };
-}
+    };
+};
