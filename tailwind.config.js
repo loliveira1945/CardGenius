@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'max-503': {'max': '503px'},
+        'lg': '720px',
+      },
       colors: {
         customPurple: '#4d3efc',
       },
